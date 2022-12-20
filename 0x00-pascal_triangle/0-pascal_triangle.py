@@ -4,10 +4,8 @@ This is a Python script that generates a Pascal's triangle of a specified \
 size using a function called pascal_triangle. The triangle is printed to \
 the console using a helper function called print_triangle.
 """
-from typing import List
 
-
-def pascal_triangle(n: int) -> List[List[int]]:
+def pascal_triangle(n):
     """
     Returns a list of lists of integers representing the Pascal's
     triangle of n.
