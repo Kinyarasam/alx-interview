@@ -5,6 +5,7 @@ size using a function called pascal_triangle. The triangle is printed to \
 the console using a helper function called print_triangle.
 """
 
+
 def pascal_triangle(n):
     """
     Returns a list of lists of integers representing the Pascal's
