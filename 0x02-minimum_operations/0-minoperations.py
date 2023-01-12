@@ -16,7 +16,8 @@ def minOperations(target: int) -> int:
             copied_chars = total_chars
             total_chars += copied_chars
             operations_count += 2
-        elif target - total_chars > 0 and (target - total_chars) % total_chars == 0:
+        elif target - total_chars > 0 and (
+                target - total_chars) % total_chars == 0:
             # copy all and paste
             copied_chars = total_chars
             total_chars += copied_chars
