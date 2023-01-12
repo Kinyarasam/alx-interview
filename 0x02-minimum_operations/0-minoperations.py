@@ -1,61 +1,28 @@
 #!/usr/bin/python3
-import math
-
-
-def isPrime(numb):
-    """Check if number is a prime number
-
-    Returns:
-        (Bool): True or false
+def minOperations(target: int) -> int:
     """
-    if numb <= 1:
-        return False
-    for x in range(2, int(numb**(1/2))+1):
-        if numb % x == 0:
-            return False
-    return True
-
-def getFactors(numb):
-    """Get all the factors of a number
-
-    Returns:
-        (List[int]): The factors of a number
+    Computes the fewest number of operations needed to result
+    in exactly n H characters.
     """
-    factors = []
-    for x in range(1, numb+1):
-        if numb % x == 0:
-            factors.append(x)
-    return factors
-
-def isPerfectSquare(numb):
-    """Check if a number is a square
-
-    Args:
-        numb (int): The number to check.
-
-    Return:
-        (bool): True or false.
-    """
-    if numb < 0:
-        return False
-    elif math.isqrt(numb)**2 == numb:
-        return True
-    return False
-
-def getMidPoint(n):
-    lst = getFactors(n)
-    print(lst)
-    mid = int(len(lst) / 2)
-    print(lst[mid])
-    print(isPerfectSquare(mid))
-
-    if (len(lst) % 2 == 0):
-        return (lst[mid] + lst[mid - 1])
-    else:
-        return (lst[mid] * 2)
-
-def minOperations(n):
-    """main function"""
-    #if (isPrime(n)):
-    #    return n
-    return getMidPoint(n)
+    if not isinstance(target, int) or target <= 0:
+        # input check for positive integers
+        return 0
+    operations_count = 0
+    copied_chars = 0
+    total_chars = 1
+    while total_chars < target:
+        if copied_chars == 0:
+            # init (the first copy all and paste)
+            copied_chars = total_chars
+            total_chars += copied_chars
+            operations_count += 2
+        elif target - total_chars > 0 and (target - total_chars) % total_chars == 0:
+            # copy all and paste
+            copied_chars = total_chars
+            total_chars += copied_chars
+            operations_count += 2
+        elif copied_chars > 0:
+            # paste
+            total_chars += copied_chars
+            operations_count += 1
+    return operations_count
