@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""The minimum operations coding challenge"""
+
+
 def minOperations(target: int) -> int:
     """
     Computes the fewest number of operations needed to result
