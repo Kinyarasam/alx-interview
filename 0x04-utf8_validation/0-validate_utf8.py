@@ -9,7 +9,8 @@ def validUTF8(data):
     Args:
         data (List[int]): The data set to check, represented by a
             list of integers. Each integer represents 1 byte of data,
-            therefore you only need to handle the 8 least significant bits of each integer.
+            therefore you only need to handle the 8 least significant
+            bits of each integer.
 
     Returns:
         bool: True if data is a valid UTF-8 encoding, else False
