@@ -10,5 +10,5 @@ def rotate_2d_matrix(matrix: List) -> None:
     Args:
     """
 
-    print([row[:] for row in matrix])
+    print([list(reversed(col)) for col in zip(*matrix)])
     return [list(reversed(col)) for col in zip(*matrix)]
