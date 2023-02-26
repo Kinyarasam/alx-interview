@@ -1,8 +1,9 @@
 #!/usr/bin/python3
+""" Change comes from within module """
 from typing import List
 
 
-def makeChange(coins, total):
+def makeChange(coins: List, total: int) -> int:
     """Returns the fewest number of coins needed to meet the given amount.
 
     Args:
