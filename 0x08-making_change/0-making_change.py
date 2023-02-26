@@ -2,7 +2,7 @@
 from typing import List
 
 
-def makeChange(coins: List, total: int) -> int:
+def makeChange(coins, total):
     """Returns the fewest number of coins needed to meet the given amount.
 
     Args:
