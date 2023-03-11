@@ -9,6 +9,9 @@ def rotate_2d_matrix(matrix: List) -> None:
 
     Args:
     """
-
-    print([list(reversed(col)) for col in zip(*matrix)])
-    return [list(reversed(col)) for col in zip(*matrix)]
+    # print([list(reversed(col)) for col in zip(*matrix)])
+    # return [list(reversed(col)) for col in zip(*matrix)]
+    matrix.reverse()
+    for i in range(len(matrix)):
+        for j in range(i):
+            matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
