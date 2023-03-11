@@ -53,7 +53,7 @@ if (process.argv.length > 2) {
     Promise.all(characterName)
       .then(names => console.log(names.join('\n')))
       .catch(allErr => console.log(allErr));
-  });*/
+  }); */
 } else {
   console.log('Usage: ./0-starwars_characters.js <Movie ID>');
 }
