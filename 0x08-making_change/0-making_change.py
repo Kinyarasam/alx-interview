@@ -17,14 +17,14 @@ def makeChange(coins, total):
         return 0
 
     # Initialize the dynamic programming table.
-    dp = [float('inf')] * (total + 1)
-    dp[0] = 0
+    change = [float('inf')] * (total + 1)
+    change[0] = 0
 
     # Fill the dynamic programming table
     for i in range(1, total + 1):
         for j in range(len(coins)):
             if coins[j] <= i:
-                dp[i] = min(dp[i], dp[i - coins[j]] + 1)
+                change[i] = min(change[i], change[i - coins[j]] + 1)
 
     # return the result
-    return dp[total] if dp[total] != float('inf') else -1
+    return change[total] if change[total] != float('inf') else -1
