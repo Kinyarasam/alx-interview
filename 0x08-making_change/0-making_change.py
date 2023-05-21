@@ -13,7 +13,7 @@ def makeChange(coins, total):
     Returns:
         (int) - The fewest number of coins needed to meet total
     """
-    if total < 1:
+    if total < 1 or total is not type(int):
         return 0
 
     # Initialize the dynamic programming table.
